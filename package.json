@@ -1,0 +1,28 @@
+{
+  "name": "arena-bos-altyapi-v13",
+  "version": "3.0.0",
+  "description": "Arena - D.JS V13 Boş Altyapı",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "fs": "^0.0.2",
+    "express": "^4.17.3"
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+//https://discord.gg/kRkHsq9BbT <= [Bunu Silmeyin]
