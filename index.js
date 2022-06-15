@@ -18,6 +18,7 @@ const client = new Client({
   partials: ["MESSAGE", "CHANNEL", "REACTION"],
   intents: 32767,
 });
+
 module.exports = client;
 
 require("./events/message.js")
