@@ -1,23 +1,8 @@
 const { Client, Message, MessageEmbed, Collection } = require("discord.js");
+const client = new Client({ intents: ["GUILDS", "GUILD_INVITES", "GUILD_MEMBERS", "GUILD_MESSAGES"], partials: ["CHANNEL", "GUILD_MEMBER", "MESSAGE", "USER"] });
 const fs = require("fs");
-const config = require("./config.json");
-const prefix = config.prefix;
+const ayarlar = require("./config.json");
 const token = process.env.TOKEN
-
-const client = new Client({
-  messageCacheLifetime: 60,
-  fetchAllMembers: false,
-  messageCacheMaxSize: 10,
-  restTimeOffset: 0,
-  restWsBridgetimeout: 100,
-  shards: "auto",
-  allowedMentions: {
-    parse: ["roles", "users", "everyone"],
-    repliedUser: true,
-  },
-  partials: ["MESSAGE", "CHANNEL", "REACTION"],
-  intents: 32767,
-});
 
 module.exports = client;
 
@@ -40,34 +25,11 @@ fs.readdir("./komutlar/", (err, files) => {
 });
 
 if(!token){
-  console.log("Bu Proje Glitch Özel Uyarlanmıştır .env Dosyasına Discord Bot Tokeninizi Yazınız")
+  console.log("Bu Proje Glitch Özel Uyarlanmıştır, .env Dosyasına Discord Bot Tokeninizi Yazınız")
 } else { 
 client.login(token).catch(e => {
   console.log("Projeye Yazılan Token Hatalı Veya Discord Botunuzun Intentleri Kapalı")
 })
 }
 
-
-
-const express = require("express");
-const app = express();
-const http = require("http");
-app.get("/", (request, response) => {
-  console.log(`UPTime Başarılı`);
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 60000);
-
-
-
-
-
-
-
-
-
-
-//https://discord.gg/kRkHsq9BbT <= [Bunu Silmeyin]
+client.login(process.env.TOKEN)

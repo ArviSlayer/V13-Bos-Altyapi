@@ -1,7 +1,7 @@
 {
-  "name": "arena-bos-altyapi-v13",
+  "name": "bos-altyapi-v13",
   "version": "3.0.0",
-  "description": "Arena - D.JS V13 Boş Altyapı",
+  "description": "ArviS - Discord.JS V13 Boş Altyapı",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
